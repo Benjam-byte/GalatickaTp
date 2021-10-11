@@ -1,0 +1,25 @@
+
+.menu li {
+    display: inline;
+    margin-left: 1%;
+    margin-right: 2%;
+    font-family:  "Robotto";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 16px;
+    text-align: center;
+  }
+  
+  .header {
+    text-align: left;
+    padding-top : 0.5%;
+    padding-bottom : 0.5%;
+    color:white;
+    background: linear-gradient( rgb(136, 13, 130),rgb(230, 103, 223));
+  }
+
+  .header a{
+    text-decoration:none; 
+    color : white;
+  }
