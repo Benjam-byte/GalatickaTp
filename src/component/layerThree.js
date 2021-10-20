@@ -31,10 +31,10 @@ export default class LayerThree extends Component {
     onKeyDown = (event) => {  //la fonction appeller pour mettre en pause en cas d'appuie sur une touche p=80 r=82 
         var kc = event.keyCode;
 
-        if (kc === 80) {
+        if (kc === 80) { // 80 = p
            //il manque du code
         }
-        if (kc === 82) {
+        if (kc === 82) { // 82= r
            //il manque du code 
         }
     }
@@ -64,9 +64,12 @@ export default class LayerThree extends Component {
         //creer un seul et unique soleil de taille on lui set son attribut name et on return l'element creer 
     }
 
+    // taille = la taille de la sphere 
+    // vec = le vecteur 3d du centre de la sphere new THREE.Vector3(x,y,z)
+    // idColor = l'indice de la couleur dans le tableau des couleurs au dessus 
     createSphere(taille, vec, idColor) { 
        //creer une sphere pour une taille une position et une color donnée pour une taille donnée
-       //puis on la fais translater au bonne endroit et on la mets dans notre tableau d'elements
+       //puis on la fais translater au bonne endroit (apparait en 0,0,0 puis translateX,Y,Z selon le vecteur vec) et on la mets dans notre tableau d'elements
     }
 
     createLight(inten, x, y, z) { // on ajoute deux lumieres une ambiantes et une directionnel 
@@ -125,7 +128,7 @@ export default class LayerThree extends Component {
         //calculer ou trouvez la 
     }
 
-    generatePointAroundSphere(r) { // creer des points aleatoires a la peripherie d'une sphere 3D
+    generatePointAroundSphere(r) { // creer des points aleatoires a la peripherie d'une sphere 3D 
         var s = Math.random() * Math.PI * 2;
         var t = Math.random() * Math.PI * 2;
         var x = r * Math.cos(s) * Math.sin(t)
@@ -152,8 +155,8 @@ export default class LayerThree extends Component {
         const renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         this.mount.appendChild(renderer.domElement); //pour placer la scene uniquement sur notre composant 
+        
         camera.position.z = 60;
-
         var controls = new OrbitControls(camera, renderer.domElement); //orbit controller pour rotationner en 3d avec la curseur 
         controls.enableDamping = true; 
         controls.dampingFactor = 0.05;
@@ -164,8 +167,9 @@ export default class LayerThree extends Component {
 
         const raycaster = new THREE.Raycaster(); //permet de verifier si un objets et dans la ligne de notre curseur par rapport a la camera 
         raycaster.setFromCamera(this.mouse, camera);
-        var intersects = raycaster.intersectObjects(this.scene.children);
+        var intersects = raycaster.intersectObjects(this.scene.children); // intersects est un objets contenant les informations obtenu par le curseur
         this.createLight(1, -5, 2, 20);
+        // A PARTIR DICI ON PEU ECRIRE EN DESSOUS 
 
 
         const animate = () => {
@@ -180,7 +184,7 @@ export default class LayerThree extends Component {
     render() {
         return (
             <div ref={ref => (this.mount = ref)} >
-                {/** ICI ON DOIT APPELLER NOTRE HUD ET NOTRE MESSAGE */}
+                {/** ICI ON DOIT APPELLER NOTRE HUD ET NOTRE MESSAGE (ceci est un commentaire en jsx) */}
             </div>
         )
     }
