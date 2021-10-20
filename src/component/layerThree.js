@@ -189,3 +189,54 @@ export default class LayerThree extends Component {
         )
     }
 }
+
+// la boucle main final pour vous en inspirer 
+/** 
+ *  const animate = () => {
+            requestAnimationFrame(animate);
+            if (this.party) { // pour la pause 
+                var element = this.element; // probleme etrange d'assignement que l'on regle ici 
+                for (let i = 0; i < element.length; i++) { // on verifie les intéractions ( collision avec le centre)
+                    this.moveToCenter2(element[i]);
+                    if (this.intersect(sun, element[i])) { // si collision
+                        if (this.sameColor(sun, element[i])) {  //si collision et meme couleur
+                            this.updateLevel(); // alors niveau reussi 
+                            this.setState({score:this.state.score+1}); //on modifie le hud
+                        }
+                        else { //sinon
+                            this.setState({vie:this.state.vie-1}); //on perd une vid
+                            if(this.state.vie === 0){ // fin de partie
+                                this.party = false;
+                                this.setState({message:this.me2 ,display:"block",display2:"block"})
+                            }
+                        }
+                        this.scene.remove(element[i]); //retire de la scene la variable la boule qui a eu la collision
+                        this.element.splice(i, 1); //retire et reindex le tableau 
+                    }
+                }
+                if (element.length === 0) { // si il n'y as plus de boules afficher alors on affiche la suite 
+                    this.generateFromDiff();
+                    this.changeSunColor(sun);
+                }
+                raycaster.setFromCamera(this.mouse, camera);  //on recalcule le ray 
+                intersects = raycaster.intersectObjects(this.scene.children);  //n'existe que pour changer la couleur des boules 
+                if (intersects.length === 0) { //si l'intersect est vide donc la souris ne pointe sur rien 
+                    for (let j = 0; j < this.scene.children.length; j++) {
+                        if (this.scene.children[j].type !== "DirectionalLight") {
+                            vide = true; //permet que tant que l'on est sur le meme element la couleur ne change qu'une fois 
+                        }
+                    }
+                }
+                else {
+                    for (let i = 0; i < intersects.length; i++) {  //regarde pour chaque objet si on est dessus
+                        if (vide) {
+                            if (intersects[0].object.name !== "sun") { //si l'intersect point sur qq chose 
+                                this.changeColor(intersects[0].object); //on change la couleur de la boule contenu dans l'intersect 
+                                vide = false; // //permet que tant que l'on est sur le meme element la couleur ne change qu'une fois 
+                            }
+                        }
+                    }
+                }
+                renderer.render(this.scene, camera); // on render 
+            }
+ */

@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Tp à trou Galactika 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Installation du projet 
+```
+git clone
+npm i
+yarn add react-spring
+npm install three 
+npm install --save three-orbitcontrols-ts
+npm install @react-spring/parallax
+npm install bootstrap
+```
+## Missions 
 
-### `yarn start`
+Vous devez reproduire le site hebergé ici : http://mitnoos.com/galactika ! Le but n'est pas de le reproduire à l'identique mais de ne pas perdre de contenu. Le contenu peu etre detaillé comme suit : 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Règles et résultat 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Vous avez 55min pour essayé de réaliser le plus possible de ce projet. 
+Le projet est réalisé en binome nous conseillons de se repartir certaines missions. 
 
-### `yarn test`
+## Interface et spring 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Reproduire une page contenant 3 layers de parallax dont un sticky header (Dans App.js) 
+https://react-spring.io/components/parallax
 
-### `yarn build`
+Reproduire les animations du layer 1 (le titre) (dans layer1.js et layer1.css) pas besoin d’etre à l’identique il faut juste 3 elements avec des animations différentes et un rendu sympa 
+https://react-spring.io/common/props
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Reproduire les animations du layer 2 (les regles)  (dans layer2.js et layer2.css)
+A nouveau la reproduction à l’identique n’est pas attendue 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 3D layer 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Afficher une sphere :
+https://threejs.org/docs/index.html#api/en/geometries/SphereGeometry
 
-### `yarn eject`
+Verifier que vous pouvez changer sa couleur en passant votre souris par dessus (raycaster dans la main boucle + changeColor ) 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Définir la fonction de création d’une sphere  (createSphere)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Afficher un soleil et une sphère (createSun & createSphere )
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Faire se deplacer une sphère selon x,y en direction du soleil   (moveToCenter) 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Faire générer cette sphère depuis le bord d’un cercle d’un rayon définis (GenerateAroundCircle)
 
-## Learn More
+Gerer une collision (Boucle main & intersect() )
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Faire se générer et deplacer les sphères selon x,y,z (moveToCenter2 & GenerateAroundSphere) 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Augmente le level si deux sphères de mêmes couleur (sameColor , levelUpdate )
 
-### Code Splitting
+Augmenter la difficulté si 10 level sont passés et l’utiliser comme variable d’un nombre de boule à générer  (levelupdate & generateFromDiff ) 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Rajouter 3 vie et la possibilité de fin de partie (restart main boucle ) 
 
-### Analyzing the Bundle Size
+Rajouter la possiblité de mettre en pause et de redémarrer 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Composant react parent/enfant 
 
-### Making a Progressive Web App
+Dans les deux cas il s’agit de faire passer au composant une props depuis layerthree.js 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Hud : contient deux balises txt une pour la vie et une pour le score
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Message : s’affiche si il y a pause ou restart et contient une seul balise txt
