@@ -14,23 +14,23 @@ npm install bootstrap
 ```
 ## Missions 
 
-Vous devez reproduire le site hebergé ici : http://mitnoos.com/galactika ! Le but n'est pas de le reproduire à l'identique mais de ne pas perdre de contenu. Le contenu peu etre detaillé comme suit : 
+Vous devez reproduire le site hebergé ici : http://mitnoos.com/galactika ! Le but n'est pas de le reproduire à l'identique mais de ne pas perdre de contenu. Le contenu peu être détaillé comme suit : 
 
 ## Règles et résultat 
 
-Vous avez 55min pour essayé de réaliser le plus possible de ce projet. 
-Le projet est réalisé en binome nous conseillons de se repartir certaines missions. 
+Vous avez 55min pour essayer de réaliser le plus possible de ce projet. 
+Le projet est réalisé en binôme nous vous conseillons de se repartir certaines missions. 
 
 ## Interface et spring 
 
 Reproduire une page contenant 3 layers de parallax dont un sticky header (Dans App.js) 
 https://react-spring.io/components/parallax
 
-Reproduire les animations du layer 1 (le titre) (dans layer1.js et layer1.css) pas besoin d’etre à l’identique il faut juste 3 elements avec des animations différentes et un rendu sympa 
+Reproduire les animations du layer 1 (le titre) (dans layer1.js et layer1.css) pas besoin d’être à l’identique il faut juste 3 elements avec des animations différentes et un rendu sympa 
 https://react-spring.io/common/props
 
 Reproduire les animations du layer 2 (les regles)  (dans layer2.js et layer2.css)
-A nouveau la reproduction à l’identique n’est pas attendue 
+À nouveau la reproduction à l’identique n’est pas attendue 
 
 ## 3D layer 
 
@@ -47,13 +47,13 @@ Faire se deplacer une sphère selon x,y en direction du soleil   (moveToCenter)
 
 Faire générer cette sphère depuis le bord d’un cercle d’un rayon définis (GenerateAroundCircle)
 
-Gerer une collision (Boucle main & intersect() )
+Gérer une collision (Boucle main & intersect() )
 
 Faire se générer et deplacer les sphères selon x,y,z (moveToCenter2 & GenerateAroundSphere) 
 
 Augmente le level si deux sphères de mêmes couleur (sameColor , levelUpdate )
 
-Augmenter la difficulté si 10 level sont passés et l’utiliser comme variable d’un nombre de boule à générer  (levelupdate & generateFromDiff ) 
+Augmenter la difficulté si 10 levels sont passés et l’utiliser comme variable d’un nombre de boules à générer  (levelupdate & generateFromDiff ) 
 
 Rajouter 3 vie et la possibilité de fin de partie (restart main boucle ) 
 
