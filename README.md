@@ -4,7 +4,7 @@
 
 ## Installation du projet 
 ```
-git clone
+git clone || npx create-react-app galactikaTp (copy/paste)
 npm i
 yarn add react-spring
 npm install three 
